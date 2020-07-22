@@ -1,18 +1,31 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld @get-amiibo="getAmiibo"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './pages/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  data(){
+    return {
+      requestedAmiibo: [],
+      favoriteAmiibo: []
+    }
+  },
+  methods: {
+     getAmiibo(request){
+      this.requestedAmiibo = request.amiibo;
+      //console.log(this.requestedAmiibo);  
+    }
   }
+
 }
 </script>
 
