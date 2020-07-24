@@ -1,17 +1,20 @@
 <template>
   <div id="app">
+    <Navigation/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld @get-amiibo="getAmiibo"/>
+    <router-view/>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './pages/HelloWorld.vue'
+import Navigation from "./components/Navigation";
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Navigation
   },
   data(){
     return {
