@@ -2,7 +2,7 @@
   <div id="app">
     <Navigation/>
     <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+    <router-view @get-amiibo="getAmiibo" :request="requestedAmiibo"/>
     
   </div>
 </template>
@@ -25,6 +25,7 @@ export default {
   methods: {
      getAmiibo(request){
       this.requestedAmiibo = request.amiibo;
+      this.$router.push("/browse");
       //console.log(this.requestedAmiibo);  
     }
   }
