@@ -15,7 +15,7 @@
         },
         methods: {
             search(event){
-                console.log(event);
+                //console.log(event);
                 event.preventDefault();
                 this.$emit("start-search", this.searchValue);
             }

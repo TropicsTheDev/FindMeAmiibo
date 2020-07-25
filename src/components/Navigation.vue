@@ -1,17 +1,27 @@
 <template functional="true">
-    <nav>
-        <h1>Testing</h1>
+  <nav>
+    <ul>
+      <li>
         <router-link to="/">Quick Search</router-link>
+      </li>
+      <li>
         <router-link to="/browse">Browse</router-link>
-    </nav>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
-    export default {
-        name: "Navigation"
-    }
+export default {
+  name: "Navigation"
+};
 </script>
 
 <style scoped>
-
+nav {
+  font-family: Impact;
+}
+li {
+  display: inline-block;
+}
 </style>

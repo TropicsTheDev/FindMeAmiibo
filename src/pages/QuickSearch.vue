@@ -23,8 +23,8 @@ export default {
       const api= `https://www.amiiboapi.com/api//amiibo/?character=${value}`;
       const data = await fetch(api).then(response => response.json())
       this.$emit("get-amiibo", data);
-      console.log(data.amiibo );
-      console.log(data.amiibo[0].gameSeries);
+      //console.log(data.amiibo );
+      //console.log(data.amiibo[0].gameSeries);
     }
   }
   

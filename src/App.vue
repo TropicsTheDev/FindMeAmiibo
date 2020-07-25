@@ -1,45 +1,63 @@
 <template>
   <div id="app">
-    <Navigation/>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view @get-amiibo="getAmiibo" :request="requestedAmiibo"/>
-    
+    <header>
+      <h1>Amiibo Crud</h1>
+      <Navigation />
+    </header>
+
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <router-view @get-amiibo="getAmiibo" @item-selected="selectAmiibo" :request="requestedAmiibo" :selected="selectedAmiibo" />
   </div>
 </template>
 
 <script>
 import Navigation from "./components/Navigation";
 
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Navigation
   },
-  data(){
+  data() {
     return {
       requestedAmiibo: [],
+      selectedAmiibo: {},
       favoriteAmiibo: []
-    }
+    };
   },
   methods: {
-     getAmiibo(request){
+    getAmiibo(request) {
       this.requestedAmiibo = request.amiibo;
       this.$router.push("/browse");
-      //console.log(this.requestedAmiibo);  
+      //console.log(this.requestedAmiibo);
+    },
+    selectAmiibo(amiibo){
+      this.selectedAmiibo = amiibo;
+      this.$router.push("/focused");
     }
   }
-
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 100%;
+  background-color: #ff3366;
+}
+
+h1, h2, h3 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: black;
 }
 </style>
