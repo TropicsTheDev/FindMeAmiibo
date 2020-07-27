@@ -14,5 +14,8 @@ import SingleItem from "../components/SingleItem"
 </script>
 
 <style scoped>
+div{
+    padding: 20px;
+}
 
 </style>

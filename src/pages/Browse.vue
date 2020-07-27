@@ -31,14 +31,14 @@ export default {
     
        
   },
-  // mounted(){
-  //   const justBrowsing = async () => {
-  //       const api= "https://www.amiiboapi.com/api//amiibo";
-  //       const data = await fetch(api).then(response => response.json())
-  //       this.browsing = data.amiibo;
-  //   }
-  //   justBrowsing();
-  // }
+  mounted(){
+    const justBrowsing = async () => {
+        const api= "https://www.amiiboapi.com/api//amiibo";
+        const data = await fetch(api).then(response => response.json())
+        this.browsing = data.amiibo;
+    }
+    justBrowsing();
+  }
   
   
 };
@@ -46,12 +46,13 @@ export default {
 
 <style scoped>
 ul{
+  max-width: 100vw;
   padding: 20px;
   margin: 0;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 40px;
   /* background-color: red; */
 }
 </style>

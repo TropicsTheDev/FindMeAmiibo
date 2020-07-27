@@ -27,7 +27,9 @@ export default {
   },
   methods: {
     getAmiibo(request) {
+      if(request.amiibo.length > 0){
       this.requestedAmiibo = request.amiibo;
+      }
       this.$router.push("/browse");
       //console.log(this.requestedAmiibo);
     },
@@ -43,6 +45,7 @@ export default {
 body{
   padding: 0px;
   margin: 0px;
+  max-width: 100vw;
 }
 #app {
   font-family: Arial, Helvetica, sans-serif;

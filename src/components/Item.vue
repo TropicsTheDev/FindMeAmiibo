@@ -3,18 +3,7 @@
     <img :src="item.image" />
     <div>
       <h3>{{item.name}}</h3>
-      <label>
-        Character:
-        <p>{{item.character}}</p>
-      </label>
-      <label>
-        Game Series:
-        <p>Game {{item.gameSeries}}</p>
-      </label>
-      <label>
-        Release:
-        <p>{{item.release.na}}</p>
-      </label>
+      
     </div>
   </li>
 </template>
@@ -30,6 +19,11 @@ export default {
 li {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   background-color: cornsilk;
+  transition: .25s ease-in-out;
+}
+li:hover{
+  transform: scale(1.05);
+  cursor: pointer;
 }
 div{
   padding: 20px;

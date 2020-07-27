@@ -36,7 +36,8 @@ input, button{
         transition: .25s;
     }
     button:hover{
-        transform: scale(1.25);
+        transform: scale(1.1);
+        cursor: pointer;
     }
     input{
         padding: 10px;

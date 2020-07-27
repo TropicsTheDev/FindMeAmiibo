@@ -36,4 +36,8 @@ a{
   text-decoration: none;
   color: black;
 }
+
+.router-link-exact-active{
+  color: white;
+} 
 </style>
