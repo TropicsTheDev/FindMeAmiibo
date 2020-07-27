@@ -40,6 +40,10 @@ export default {
 </script>
 
 <style>
+body{
+  padding: 0px;
+  margin: 0px;
+}
 #app {
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +51,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
+  font-size: 20px;
 }
 
 header {

@@ -19,9 +19,21 @@ export default {
 
 <style scoped>
 nav {
+  justify-self: right;
+  text-align: left;
   font-family: Impact;
+  margin-right: 30px;
 }
+
 li {
   display: inline-block;
+  justify-self: left;
+  align-self: center;
+  text-align: left;
+  margin: 10px 10px;
+}
+a{
+  text-decoration: none;
+  color: black;
 }
 </style>

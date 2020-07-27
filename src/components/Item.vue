@@ -4,14 +4,15 @@
     <div>
       <h3>{{item.name}}</h3>
       <label>
-        Character
+        Character:
         <p>{{item.character}}</p>
       </label>
       <label>
+        Game Series:
         <p>Game {{item.gameSeries}}</p>
       </label>
       <label>
-        Release
+        Release:
         <p>{{item.release.na}}</p>
       </label>
     </div>
@@ -28,11 +29,18 @@ export default {
 <style scoped>
 li {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  background-color: cornsilk;
+}
+div{
+  padding: 20px;
 }
 label{
     font-weight: bold; 
+    display: block;
+    text-align: left;
 }
 p{
     font-weight:normal;
+    display: inline-block;
 }
 </style>
