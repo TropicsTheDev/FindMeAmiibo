@@ -18,6 +18,7 @@
                 //console.log(event);
                 event.preventDefault();
                 this.$emit("start-search", this.searchValue);
+                // Emits a custom event to the parent
             }
         }
     }
@@ -37,6 +38,7 @@ input, button{
         transition: .25s;
     }
     button:hover{
+        /* Hover effects  */
         transform: scale(1.1);
         cursor: pointer;
     }

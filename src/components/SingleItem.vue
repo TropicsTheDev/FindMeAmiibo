@@ -32,6 +32,7 @@ main{
   grid-template-columns: 25%;
   justify-content: center;
   grid-gap: 20px;
+  /* Single column grid. Display content in the  */
 }
 div{
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
@@ -41,6 +42,7 @@ div{
 img{
   display: block;
   margin: 0 auto;
+  /* centers image */
 }
 label{
     font-weight: bold; 

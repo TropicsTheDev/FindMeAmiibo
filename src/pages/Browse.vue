@@ -1,8 +1,11 @@
 <template>
+<!-- view to display items from search results -->
   <main>
+    <!-- Uses v-if to denote  if there is request, show the requested data-->
     <ul v-if="request.length != 0">
       <Item  v-for="item in request" :key="(item.head + item.tail)" :item="item" @click.native="selectItem(item)" />
     </ul>
+    <!-- Else, show the all items query -->
     <ul v-else>
       <Item  v-for="item in browsing" :key="(item.head + item.tail)" :item="item" @click.native="selectItem(item)" />
     </ul>
@@ -17,7 +20,7 @@ export default {
   components: { Item },
   data(){
     return {
-      browsing: []
+      browsing: [] //container incase the request has no items
     }
   },
   methods: {

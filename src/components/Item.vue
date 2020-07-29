@@ -3,7 +3,6 @@
     <img :src="item.image" />
     <div>
       <h3>{{item.name}}</h3>
-      
     </div>
   </li>
 </template>
@@ -11,7 +10,7 @@
 <script>
 export default {
   name: "Item",
-  props: ["item"]
+  props: ["item"]  //will get
 };
 </script>
 
@@ -22,8 +21,12 @@ li {
   transition: .25s ease-in-out;
 }
 li:hover{
+  /* Scale up hover for user feedback */
   transform: scale(1.05);
   cursor: pointer;
+}
+img{
+  max-width: 100%;
 }
 div{
   padding: 20px;

@@ -1,4 +1,5 @@
 <template>
+<!-- A view to display an item after it is selected -->
     <div>
         <SingleItem :selected="selected"/>
     </div>

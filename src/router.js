@@ -9,7 +9,7 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     routes: [
       {
-        path: "/",
+        path: "#/",
         component: QuickSearch
       },
       {
@@ -22,7 +22,8 @@ const router = new VueRouter({
 
       }
     ],
-    mode: "history"
+    // mode: "history"
+    // hash mode is default mode, so mode is not needed
   });
 
   export default router;

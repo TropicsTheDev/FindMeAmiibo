@@ -7,8 +7,7 @@ Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
-
-
+// Render the app. Feed the router to it to get between page views
 new Vue({
   router,
   render: (h) => h(App),

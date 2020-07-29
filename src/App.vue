@@ -1,4 +1,5 @@
 <template>
+<!-- Templates display the html of the component -->
   <div id="app">
     <header>
       <h1>Amiibo Crud</h1>
@@ -6,11 +7,13 @@
     </header>
 
     <img alt="Vue logo" src="./assets/logo.png" />
+    <!-- Can pass data through the router to get it to child components. @ symbol denotes events. : binds js data to the prop -->
     <router-view @get-amiibo="getAmiibo" @item-selected="selectAmiibo" :request="requestedAmiibo" :selected="selectedAmiibo" />
   </div>
 </template>
 
 <script>
+// Logic done in script tags
 import Navigation from "./components/Navigation";
 
 export default {
@@ -31,7 +34,7 @@ export default {
       this.requestedAmiibo = request.amiibo;
       }
       this.$router.push("/browse");
-      //console.log(this.requestedAmiibo);
+      // preps the 
     },
     selectAmiibo(amiibo){
       this.selectedAmiibo = amiibo;
@@ -42,6 +45,7 @@ export default {
 </script>
 
 <style>
+/* Vanilla css can be used in style tags. (Theres a way to use SCSS as well) */
 body{
   padding: 0px;
   margin: 0px;

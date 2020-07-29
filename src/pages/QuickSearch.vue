@@ -1,4 +1,5 @@
 <template>
+<!-- Home page component. Simple search functionality -->
   <div class="hello">
     <h2>Search For An Amiibo!</h2>
     <Search @start-search="searchAmiibo"/>
@@ -21,6 +22,7 @@ export default {
   methods: {
     async searchAmiibo(value){
       let api;
+      //if there's a search value use value. else mass query
       if(value !== ""){
        api= `https://www.amiiboapi.com/api//amiibo/?character=${value}`;
        
