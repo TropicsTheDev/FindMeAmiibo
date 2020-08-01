@@ -3,9 +3,9 @@
   <main>
     <!-- Uses v-if to denote  if there is request, show the requested data-->
     <div v-if="request.length != 0">
-      <header>
+      <h4>
           We found <strong>{{request.length}}</strong> results for your search.
-      </header>
+      </h4>
       <ul>
         
         <Item
@@ -18,7 +18,7 @@
     </div>
     <!-- Else, show the all items query -->
     <div v-else>
-      <h4 v-if="error != null">
+      <h4 v-if="error != null" class="error">
         {{error}}
       </h4>
       <ul>
@@ -68,13 +68,21 @@ export default {
 </script>
 
 <style scoped>
-header{
+h4, footer{
   display: block;
   width: 25%;
   margin: 0 auto;
   padding: 20px;
   border-radius: 10px;
   background-color: #83FF33;
+  font-weight: bold;
+}
+.error{
+  background-color: #CC0033;
+  color: white;
+}
+div{
+  margin: 50px 0;
 }
 ul {
   max-width: 100vw;
@@ -91,11 +99,6 @@ strong {
 }
 
 footer{
-  display: block;
-  width: 25%;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
   background-color: #ff3366;
   color: white;
 }

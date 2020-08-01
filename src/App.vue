@@ -78,7 +78,7 @@ header {
 }
 
 .main-header {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 div{
