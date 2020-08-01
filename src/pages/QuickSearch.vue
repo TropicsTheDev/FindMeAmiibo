@@ -1,8 +1,8 @@
 <template>
-<!-- Home page component. Simple search functionality -->
+  <!-- Home page component. Simple search functionality -->
   <div class="hello">
     <h2>Search For An Amiibo!</h2>
-    <Search @start-search="searchAmiibo"/>
+    <Search @start-search="searchAmiibo" />
   </div>
 </template>
 
@@ -10,37 +10,41 @@
 import Search from "../components/Search";
 
 export default {
-  name: 'QuickSearch',
+  name: "QuickSearch",
   components: {
-    Search
+    Search,
   },
-  data(){
-    return {
-
-    }
+  data() {
+    return {};
   },
   methods: {
-    async searchAmiibo(value){
+    async searchAmiibo(value) {
       let api;
+      let data;
       //if there's a search value use value. else mass query
-      if(value !== ""){
-       api= `https://www.amiiboapi.com/api//amiibo/?character=${value}`;
-       
+
+      if (value !== "") {
+        api = `https://www.amiiboapi.com/api//amiibo/?character=${value}`;
+      } else {
+        api = "https://www.amiiboapi.com/api//amiibo";
       }
-      else{
-        api = "https://www.amiiboapi.com/api//amiibo"
+      try { 
+        let response = await fetch(api);
+        data = await  response.json();
+        
+        //console.log(data.amiibo);
+      } catch (err) {
+        alert("failed", err);
+        data = err;
+        //this.$emit("failed-search", error);
       }
-      const data = await fetch(api).then(response => response.json());
-      this.$emit("get-amiibo", data);
-      console.log(data.amiibo );
-      //console.log(data.amiibo[0].gameSeries);
-    }
-  }
-  
-}
+       console.log(data); //this returns either the amiibo or an error
+        this.$emit("get-amiibo", data);
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 </style>

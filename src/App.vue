@@ -7,7 +7,7 @@
     </header>
 
     <!-- Can pass data through the router to get it to child components. @ symbol denotes events. : binds js data to the prop -->
-    <router-view @get-amiibo="getAmiibo" @item-selected="selectAmiibo" :request="requestedAmiibo" :selected="selectedAmiibo" />
+    <router-view @get-amiibo="getAmiibo" @item-selected="selectAmiibo" :request="requestedAmiibo" :selected="selectedAmiibo" :error="error"/>
   </div>
 </template>
 
@@ -24,13 +24,19 @@ export default {
     return {
       requestedAmiibo: [],
       selectedAmiibo: {},
-      favoriteAmiibo: []
+      favoriteAmiibo: [],
+      error: null
     };
   },
   methods: {
     getAmiibo(request) {
-      if(request.amiibo.length > 0){
+      if(request.amiibo){
       this.requestedAmiibo = request.amiibo;
+      this.error = null;
+      }
+      else if(request.error){
+        this.requestedAmiibo = [];
+        this.error = "There were no matching amiibo for your request";
       }
       this.$router.push("/browse");
       // preps the 
@@ -38,6 +44,10 @@ export default {
     selectAmiibo(amiibo){
       this.selectedAmiibo = amiibo;
       this.$router.push("/focused");
+    },
+    sendError(error){
+      this.error = error; 
+      this.$router.push("/browse");
     }
   }
 };

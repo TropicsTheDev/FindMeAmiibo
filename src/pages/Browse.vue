@@ -18,6 +18,9 @@
     </div>
     <!-- Else, show the all items query -->
     <div v-else>
+      <h4 v-if="error != null">
+        {{error}}
+      </h4>
       <ul>
         <Item
           v-for="item in browsing"
@@ -37,7 +40,7 @@
 import Item from "../components/Item";
 export default {
   name: "Broswe",
-  props: ["request"],
+  props: ["request", "error"],
   components: { Item },
   data() {
     return {
