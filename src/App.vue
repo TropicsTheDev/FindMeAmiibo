@@ -1,12 +1,11 @@
 <template>
 <!-- Templates display the html of the component -->
   <div id="app">
-    <header>
-      <h1>Amiibo Crud</h1>
+    <header class="main-header">
+      <h1> Find Me Amiibo </h1>
       <Navigation />
     </header>
 
-    <img alt="Vue logo" src="./assets/logo.png" />
     <!-- Can pass data through the router to get it to child components. @ symbol denotes events. : binds js data to the prop -->
     <router-view @get-amiibo="getAmiibo" @item-selected="selectAmiibo" :request="requestedAmiibo" :selected="selectedAmiibo" />
   </div>
@@ -68,6 +67,13 @@ header {
   background-color: #ff3366;
 }
 
+.main-header {
+  margin-bottom: 20px;
+}
+
+div{
+  margin-top: 10%;
+}
 h1, h2, h3 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: black;

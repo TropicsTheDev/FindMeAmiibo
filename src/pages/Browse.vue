@@ -1,14 +1,35 @@
 <template>
-<!-- view to display items from search results -->
+  <!-- view to display items from search results -->
   <main>
     <!-- Uses v-if to denote  if there is request, show the requested data-->
-    <ul v-if="request.length != 0">
-      <Item  v-for="item in request" :key="(item.head + item.tail)" :item="item" @click.native="selectItem(item)" />
-    </ul>
+    <div v-if="request.length != 0">
+      <header>
+          We found <strong>{{request.length}}</strong> results for your search.
+      </header>
+      <ul>
+        
+        <Item
+          v-for="item in request"
+          :key="(item.head + item.tail)"
+          :item="item"
+          @click.native="selectItem(item)"
+        />
+      </ul>
+    </div>
     <!-- Else, show the all items query -->
-    <ul v-else>
-      <Item  v-for="item in browsing" :key="(item.head + item.tail)" :item="item" @click.native="selectItem(item)" />
-    </ul>
+    <div v-else>
+      <ul>
+        <Item
+          v-for="item in browsing"
+          :key="(item.head + item.tail)"
+          :item="item"
+          @click.native="selectItem(item)"
+        />
+      </ul>
+    </div>
+    <footer>
+      You made it to the end!
+    </footer>
   </main>
 </template>
 
@@ -18,37 +39,41 @@ export default {
   name: "Broswe",
   props: ["request"],
   components: { Item },
-  data(){
+  data() {
     return {
-      browsing: [] //container incase the request has no items
-    }
+      browsing: [], //container incase the request has no items
+    };
   },
   methods: {
-      selectItem(item){
-          console.log(item);
-          this.$emit("item-selected", item);
-      },
-       
-      //console.log(data.amiibo );
-      //console.log(data.amiibo[0].gameSeries);
-    
-       
+    selectItem(item) {
+      console.log(item);
+      this.$emit("item-selected", item);
+    },
+
+    //console.log(data.amiibo );
+    //console.log(data.amiibo[0].gameSeries);
   },
-  mounted(){
+  mounted() {
     const justBrowsing = async () => {
-        const api= "https://www.amiiboapi.com/api//amiibo";
-        const data = await fetch(api).then(response => response.json())
-        this.browsing = data.amiibo;
-    }
+      const api = "https://www.amiiboapi.com/api//amiibo";
+      const data = await fetch(api).then((response) => response.json());
+      this.browsing = data.amiibo;
+    };
     justBrowsing();
-  }
-  
-  
+  },
 };
 </script>
 
 <style scoped>
-ul{
+header{
+  display: block;
+  width: 25%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #83FF33;
+}
+ul {
   max-width: 100vw;
   padding: 20px;
   margin: 0;
@@ -57,5 +82,18 @@ ul{
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 40px;
   /* background-color: red; */
+}
+strong {
+  color: black;
+}
+
+footer{
+  display: block;
+  width: 25%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ff3366;
+  color: white;
 }
 </style>

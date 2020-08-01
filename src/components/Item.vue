@@ -18,6 +18,8 @@ export default {
 li {
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   background-color: cornsilk;
+  border-radius: 5px;
+  padding: 20px;
   transition: .25s ease-in-out;
 }
 li:hover{
@@ -29,7 +31,8 @@ img{
   max-width: 100%;
 }
 div{
-  padding: 20px;
+  padding: 5px;
+  margin: 0;
 }
 label{
     font-weight: bold; 

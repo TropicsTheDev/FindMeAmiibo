@@ -32,14 +32,15 @@ input, button{
     button{
         background-color: #83FF33;
         box-shadow: 0px 2.5px 2.5px rgba(0,0,0, .5);
-        border-radius: 5px;
+        border-radius: 15px;
         border: none;
-        padding: 10px;
+        padding: 10px 20px;
         transition: .25s;
     }
     button:hover{
         /* Hover effects  */
         transform: scale(1.1);
+        color: white;
         cursor: pointer;
     }
     input{

@@ -32,7 +32,7 @@ export default {
       }
       const data = await fetch(api).then(response => response.json());
       this.$emit("get-amiibo", data);
-      //console.log(data.amiibo );
+      console.log(data.amiibo );
       //console.log(data.amiibo[0].gameSeries);
     }
   }
