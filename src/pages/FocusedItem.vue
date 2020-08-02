@@ -16,7 +16,8 @@ import SingleItem from "../components/SingleItem"
 
 <style scoped>
 div{
-    padding: 20px;
+    
+    margin-top: 5%;
 }
 
 </style>

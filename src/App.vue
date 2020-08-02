@@ -89,4 +89,8 @@ h1, h2, h3 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: black;
 }
+
+h3{
+  font-size: 30px;
+}
 </style>

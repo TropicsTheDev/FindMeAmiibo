@@ -101,6 +101,7 @@ strong {
 
 footer{
   background-color: #ff3366;
+  margin-bottom: 20px;
   color: white;
 }
 </style>
