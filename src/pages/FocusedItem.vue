@@ -17,7 +17,7 @@ import SingleItem from "../components/SingleItem"
 <style scoped>
 div{
     
-    margin-top: 5%;
+    margin-top: 2.5%;
 }
 
 </style>

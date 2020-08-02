@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# amiibo_crud
+# Find Me Amiibo
+A basic UI interface for the amiibo api. 
 
 ## Project setup
 ```
@@ -23,7 +23,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-=======
-# AmiiboCrud
-A basic CRUD app with Amiibo API and a VueJS
->>>>>>> 70a2741be07bb2626dee175f50e97c1713f03751

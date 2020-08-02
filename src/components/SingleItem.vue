@@ -12,7 +12,7 @@
         <p>{{selected.gameSeries}}</p>
       </label>
       <label>
-        Release
+        Release:
         <p>{{selected.release.na}}</p>
       </label>
     </div>
@@ -31,13 +31,16 @@ main{
   display: grid;
   grid-template-columns: 25%;
   justify-content: center;
-  grid-gap: 20px;
+  align-items: center;
+  grid-gap: 10px;
+  margin: 0;
   /* Single column grid. Display content in the  */
 }
 div{
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
   background-color: cornsilk;
   padding: 20px;
+  margin-top: 10px;
 }
 img{
   display: block;
