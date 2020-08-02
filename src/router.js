@@ -22,6 +22,7 @@ const router = new VueRouter({
 
       }
     ],
+    base: "/FindMeAmiibo/"
     // mode: "history"
     // hash mode is default mode, so mode is not needed
   });
