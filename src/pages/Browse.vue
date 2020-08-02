@@ -76,6 +76,7 @@ h4, footer{
   border-radius: 10px;
   background-color: #83FF33;
   font-weight: bold;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.75);
 }
 .error{
   background-color: #CC0033;

@@ -75,6 +75,7 @@ header {
   grid-template-columns: 1fr 3fr;
   width: 100%;
   background-color: #ff3366;
+  align-items: center;
 }
 
 .main-header {
