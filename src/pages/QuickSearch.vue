@@ -1,6 +1,7 @@
 <template>
   <!-- Home page component. Simple search functionality -->
   <div class="hello">
+    <img src="../assets/compass.png"/>
     <h2>Search For An Amiibo!</h2>
     <Search @start-search="searchAmiibo" />
   </div>
@@ -47,4 +48,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div{
+  margin-top: 7.5%;
+}
 </style>
