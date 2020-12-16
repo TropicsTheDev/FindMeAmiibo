@@ -58,7 +58,7 @@ export default {
   },
   mounted() {
     const justBrowsing = async () => {
-      const api = "https://www.amiiboapi.com/api//amiibo";
+      const api = "https://www.amiiboapi.com/api/amiibo";
       const data = await fetch(api).then((response) => response.json());
       this.browsing = data.amiibo;
     };

@@ -25,9 +25,9 @@ export default {
       //if there's a search value use value. else mass query
 
       if (value !== "") {
-        api = `https://www.amiiboapi.com/api//amiibo/?character=${value}`;
+        api = `https://www.amiiboapi.com/api/amiibo/?character=${value}`;
       } else {
-        api = "https://www.amiiboapi.com/api//amiibo";
+        api = "https://www.amiiboapi.com/api/amiibo";
       }
       try { 
         let response = await fetch(api);
